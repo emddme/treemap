@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Source Code Pro", monospace;
+  font-stretch: 100%;
+  font-style: NORMAL;
+  font-weight: 200;
+  src: url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap")
+    format("variable");
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #b4c3db;
+}
+#app {
+  width: 100vw;
+  font: 1vw Source Code Pro;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#title,
+#description {
+  margin: 0.4%;
+}
