@@ -24,18 +24,23 @@ const kickstartFlat = kickstart.children.map((k) => k.children).flat();
 console.log(kickstart.children);
 console.log(kickstartFlat);
 
-const group = d3.rollup(
+//create nested map object 'groups'
+const groups = d3.rollup(
   kickstartFlat,
   sumOfFunds,
   (d) => d.category,
   (d) => d.name
 );
-console.log(
-  group.get("Sound")
-  // .get("Revols - Premium Quick Custom-Fit Wireless Earphones")
-);
 
-// sum verification
+//feed groups to hierarchy-method to create D3's hierarchy-structure 'root'
+const root = d3.hierarchy(groups);
+
+//hierarchy's sum method propagates
+root.sum((d) => d[1]);
+
+console.log(root);
+
+// total funds verification
 const verify = (input) => {
   let sum = 0;
   input.forEach((k) => {
