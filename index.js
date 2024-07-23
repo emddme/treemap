@@ -12,25 +12,20 @@ const games = await getData(URLs.static_games);
 
 //flatten kickstart object
 const kickstartFlat = flattenData(kickstart);
+const moviesFlat = flattenData(movies);
+const gamesFlat = flattenData(games);
+
+//create scales
 
 //create treemap
-const root = createTreemap(kickstartFlat, sumOfFunds, size, padding);
+const rootKickstart = createTreemap(kickstartFlat, sumOfFunds, size, padding);
+const rootMovies = createTreemap(moviesFlat, sumOfFunds, size, padding);
+const rootGames = createTreemap(gamesFlat, sumOfFunds, size, padding);
 
 //create svg
-createSVG(viewBox, root, stroke);
+// const chartKickstart = createSVG(viewBox, rootKickstart, stroke);
+const chartMovies = createSVG(viewBox, rootMovies, stroke);
+// const chartGames = createSVG(viewBox, rootGames, stroke);
 
-// verification, logging
-const verify = (input) => {
-  let sum = 0;
-  input.forEach((k) => {
-    for (let i = 0; i < k.children.length; i++) {
-      sum = sum + parseInt(k.children[i].value);
-    }
-  });
-  return sum;
-};
+//logging etc.
 console.log(kickstart.children);
-console.log(kickstartFlat);
-console.log("d3 computed total funds", sumOfFunds(kickstartFlat));
-console.log("verified total funds", verify(kickstart.children));
-console.log(root);

@@ -17,4 +17,4 @@ export const viewBox = "0 0 100 100";
 
 //styling
 export const stroke = "black";
-export const padding = 2.5;
+export const padding = 0.5;

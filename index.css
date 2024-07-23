@@ -29,7 +29,9 @@ body {
 #description {
   margin: 0.4%;
 }
-.limit {
+.trunk,
+.branch,
+.leaf {
   stroke-width: 0.2;
   fill: none;
 }
