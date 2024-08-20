@@ -1,4 +1,4 @@
-const createSVG = (viewBox, rootObj, stroke) => {
+const createSVG = (viewBox, stroke, rootObj) => {
   d3.select("#app")
     .append("svg")
     .attr("id", "chart")
