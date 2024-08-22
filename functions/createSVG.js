@@ -1,4 +1,10 @@
-const createSVG = (viewBox, stroke, rootObj) => {
+const createSVG = (
+  createValueScale,
+  createCatScale,
+  viewBox,
+  stroke,
+  rootObj
+) => {
   d3.select("#app")
     .append("svg")
     .attr("id", "chart")
@@ -28,6 +34,13 @@ const createSVG = (viewBox, stroke, rootObj) => {
     .attr("y", (d) => d.y0)
     .attr("width", (d) => d.x1 - d.x0)
     .attr("height", (d) => d.y1 - d.y0)
-    .style("stroke", stroke);
+    .style("stroke", stroke)
+    .style("fill", (d, i) => {
+      if (d.depth === 1) {
+        const scale = createCatScale(rootObj);
+        const fill = scale(i);
+        return fill;
+      }
+    });
 };
 export default createSVG;

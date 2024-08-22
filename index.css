@@ -17,14 +17,14 @@ body {
   background-color: #b4c3db;
 }
 h1 {
-  font-size: 35px;
-  padding: 5%;
+  font-size: 2vw;
+  padding: 1%;
 }
 h2 {
-  font-size: 25px;
+  font-size: 1.5vw;
 }
 h3 {
-  font-size: 15px;
+  font-size: 1vw;
 }
 #app {
   width: 100vw;
@@ -47,11 +47,12 @@ h3 {
   justify-content: center;
 }
 .link {
-  padding: 3%;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
 }
 .trunk,
 .branch,
 .leaf {
-  stroke-width: 0.2;
+  stroke-width: 0;
   fill: none;
 }
