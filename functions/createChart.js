@@ -1,13 +1,16 @@
 const createChart = (
   createFront,
   frontArgs,
-  createValueScale,
-  createCatScale,
+  createScales,
   chartName,
   viewBox,
   stroke,
   rootObj
 ) => {
+  //createScales
+  const catScale = createScales(rootObj)[0];
+  const valueScale = createScales(rootObj)[1];
+
   //insert navbar
   d3.select("#app").append("div").attr("id", "navbar");
   d3.select("#navbar")
@@ -68,8 +71,10 @@ const createChart = (
     .style("stroke", stroke)
     .style("fill", (d, i) => {
       if (d.depth === 1) {
-        const scale = createCatScale(rootObj);
-        const fill = scale(i);
+        const fill = catScale(i);
+        return fill;
+      } else if (d.depth === 2) {
+        const fill = valueScale(d.value);
         return fill;
       }
     });

@@ -1,8 +1,7 @@
 import getData from "./functions/getData.js";
 import sumOfFunds from "./functions/sumOfFunds.js";
 import flattenData from "./functions/flattenData.js";
-import createCatScale from "./functions/createCatScale.js";
-import createValueScale from "./functions/createValueScale.js";
+import createScales from "./functions/createScales.js";
 import createFront from "./functions/createFront.js";
 import createTreemap from "./functions/createTreemap.js";
 import createChart from "./functions/createChart.js";
@@ -30,8 +29,7 @@ createFront(
   rootGames,
   stroke,
   viewBox,
-  createValueScale,
-  createCatScale,
+  createScales,
   createFront,
   createChart
 );

@@ -32,11 +32,10 @@ const createFront = (...args) => {
         const clicked = e.target.outerText;
         const frontArgs = [...args];
         d3.select("#app").selectAll("*").remove();
-        args[8](
-          args[7],
+        args[7](
+          args[6],
           frontArgs,
           args[5],
-          args[6],
           clicked,
           args[4],
           args[3],
