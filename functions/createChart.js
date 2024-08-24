@@ -1,10 +1,41 @@
-const createSVG = (
+const createChart = (
+  createFront,
+  frontArgs,
   createValueScale,
   createCatScale,
+  chartName,
   viewBox,
   stroke,
   rootObj
 ) => {
+  //insert navbar
+  d3.select("#app").append("div").attr("id", "navbar");
+  d3.select("#navbar")
+    .append("h3")
+    .classed("link", true)
+    .text(chartName)
+    .style("color", "darkblue");
+  d3.select("#navbar")
+    .append("h3")
+    .classed("link", true)
+    .attr("id", "back")
+    .text("BACK")
+    .style("color", "black")
+    .on("mouseover", (e) =>
+      d3
+        .select(`#${e.target.id}`)
+        .style("color", "white")
+        .style("cursor", "grab")
+    )
+    .on("mouseout", (e) =>
+      d3
+        .select(`#${e.target.id}`)
+        .style("color", "black")
+        .style("cursor", "default")
+    )
+    .on("click", () => createFront(...frontArgs));
+
+  // draw chart
   d3.select("#app")
     .append("svg")
     .attr("id", "chart")
@@ -43,4 +74,4 @@ const createSVG = (
       }
     });
 };
-export default createSVG;
+export default createChart;

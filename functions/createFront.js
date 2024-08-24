@@ -6,6 +6,7 @@ const createFront = (...args) => {
     ["films", "Top-grossing films"],
     ["games", "Top videogame sales"],
   ];
+  d3.select("#app").selectAll("*").remove();
   d3.select("#app").append("h1").text(welcome);
   d3.select("#app").append("h2").text(intro);
   d3.select("#app").append("div").attr("id", "navbar");
@@ -28,33 +29,19 @@ const createFront = (...args) => {
           .style("cursor", "default")
       )
       .on("click", (e) => {
+        const clicked = e.target.outerText;
+        const frontArgs = [...args];
         d3.select("#app").selectAll("*").remove();
-        d3.select("#app").append("div").attr("id", "navbar");
-        d3.select("#navbar")
-          .append("h3")
-          .classed("link", true)
-          .text(e.target.outerText)
-          .style("color", "darkblue");
-        d3.select("#navbar")
-          .append("h3")
-          .classed("link", true)
-          .attr("id", "back")
-          .text("BACK")
-          .style("color", "black")
-          .on("mouseover", (e) =>
-            d3
-              .select(`#${e.target.id}`)
-              .style("color", "white")
-              .style("cursor", "grab")
-          )
-          .on("mouseout", (e) =>
-            d3
-              .select(`#${e.target.id}`)
-              .style("color", "black")
-              .style("cursor", "default")
-          );
-
-        args[7](args[6], args[5], args[4], args[3], args[i]);
+        args[8](
+          args[7],
+          frontArgs,
+          args[5],
+          args[6],
+          clicked,
+          args[4],
+          args[3],
+          args[i]
+        );
       });
   }
 };

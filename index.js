@@ -5,7 +5,7 @@ import createCatScale from "./functions/createCatScale.js";
 import createValueScale from "./functions/createValueScale.js";
 import createFront from "./functions/createFront.js";
 import createTreemap from "./functions/createTreemap.js";
-import createSVG from "./functions/createSVG.js";
+import createChart from "./functions/createChart.js";
 import { padding, size, stroke, URLs, viewBox } from "./variables.js";
 
 //get STATIC data
@@ -30,7 +30,8 @@ createFront(
   rootGames,
   stroke,
   viewBox,
-  createCatScale,
   createValueScale,
-  createSVG
+  createCatScale,
+  createFront,
+  createChart
 );
