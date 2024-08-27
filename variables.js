@@ -13,7 +13,6 @@ export const URLs = {
 
 //dimensions
 export const size = [100, 100];
-export const viewBox = "0 0 100 100";
 
 //styling
 export const stroke = "black";

@@ -4,8 +4,10 @@ import flattenData from "./functions/flattenData.js";
 import createScales from "./functions/createScales.js";
 import createFront from "./functions/createFront.js";
 import createTreemap from "./functions/createTreemap.js";
-import createChart from "./functions/createChart.js";
-import { padding, size, stroke, URLs, viewBox } from "./variables.js";
+import drawChart from "./functions/drawChart.js";
+import drawLegend from "./functions/drawLegend.js";
+import drawNavbar from "./functions/drawNavbar.js";
+import { padding, size, URLs } from "./variables.js";
 
 //get STATIC data
 const kickstart = await getData(URLs.static_kickstart);
@@ -27,9 +29,12 @@ createFront(
   rootKickstart,
   rootMovies,
   rootGames,
-  stroke,
-  viewBox,
   createScales,
   createFront,
-  createChart
+  drawNavbar,
+  drawChart,
+  drawLegend
 );
+
+//logs
+console.log(rootMovies);
