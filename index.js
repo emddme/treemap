@@ -8,6 +8,7 @@ import drawChart from "./functions/drawChart.js";
 import drawLegend from "./functions/drawLegend.js";
 import drawNavbar from "./functions/drawNavbar.js";
 import { padding, size, URLs } from "./variables.js";
+import addTooltip from "./functions/addTooltip.js";
 
 //get STATIC data
 const kickstart = await getData(URLs.static_kickstart);
@@ -33,8 +34,11 @@ createFront(
   createFront,
   drawNavbar,
   drawChart,
-  drawLegend
+  drawLegend,
+  addTooltip
 );
+
+document.getElementsByClassName("link")[0].click();
 
 //logs
 console.log(rootMovies);

@@ -61,9 +61,14 @@ h3 {
   padding-left: 1.5%;
   padding-right: 1.5%;
 }
-.trunk,
-.branch,
-.tile {
-  stroke-width: 0;
+.trunk {
   fill: none;
+}
+.rect-text {
+  fill: black;
+  font-size: 2px;
+  white-space: pre-line;
+}
+#tooltip {
+  fill: pink;
 }

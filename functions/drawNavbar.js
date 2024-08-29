@@ -9,7 +9,7 @@ const drawNavbar = (chartName, createFront, frontArgs) => {
     .append("h1")
     .classed("link", true)
     .attr("id", "back")
-    .text("BACK")
+    .text("MORE")
     .style("color", "black")
     .on("mouseover", (e) =>
       d3

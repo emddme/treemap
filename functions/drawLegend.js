@@ -1,6 +1,7 @@
 const drawLegend = (createScales, rootObj) => {
   const scale = createScales(rootObj)[0];
   const categories = rootObj.children.map((item) => item.data[0]);
+  const values = rootObj.children.map((item) => item.value);
   const viewBox = "0 0 10 100";
 
   //cube dimensions
@@ -23,9 +24,11 @@ const drawLegend = (createScales, rootObj) => {
   for (let i = 0; i < categories.length; i++) {
     d3.select("#legend")
       .append("rect")
+      .attr("id", "legend-item")
       .attr("y", `${c_y + c_dy * i}`)
       .attr("height", c_edge)
       .attr("width", c_edge)
+
       .style("fill", `${scale(i)}`);
   }
 
@@ -36,6 +39,7 @@ const drawLegend = (createScales, rootObj) => {
       .classed("legend-text", true)
       .attr("x", t_x)
       .attr("y", `${t_y + t_dy * i}`)
+      .attr("value", values[i])
       .text(categories[i]);
   }
 };
