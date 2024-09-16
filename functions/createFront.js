@@ -1,11 +1,11 @@
 const createFront = (...props) => {
   //variables
   const welcome = "Welcome!";
-  const intro = "Available Treemaps:";
+  const intro = "top-100 Treemaps:";
   const mapIdsAndNames = [
-    ["kickstart", "Top kickstart fundraisers"],
-    ["films", "Top-grossing films"],
-    ["games", "Top videogame sales"],
+    ["kickstart", "Kickstarter fundraisers"],
+    ["films", "Highest grossing films"],
+    ["games", "Videogame sales"],
   ];
   //add descriptions and prop-drill to navbar
   const descriptions = [];

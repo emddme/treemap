@@ -20,10 +20,13 @@ const kickstartFlat = flattenData(kickstart);
 const moviesFlat = flattenData(movies);
 const gamesFlat = flattenData(games);
 
-//create treemaps
+//create treemaps, add dataset identifier
 const rootKickstart = createTreemap(kickstartFlat, sumOfFunds, size, padding);
+rootKickstart.dataset = "kickstarter";
 const rootMovies = createTreemap(moviesFlat, sumOfFunds, size, padding);
+rootMovies.dataset = "movies";
 const rootGames = createTreemap(gamesFlat, sumOfFunds, size, padding);
+rootGames.dataset = "games";
 
 //create frontpage
 createFront(
@@ -39,6 +42,3 @@ createFront(
 );
 
 document.getElementsByClassName("links")[0].click();
-
-//logs
-console.log(rootMovies);
