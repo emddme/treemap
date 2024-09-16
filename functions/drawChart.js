@@ -1,7 +1,6 @@
 const drawChart = (createScales, rootObj) => {
   //variables
   const viewBox = "0 0 100 100";
-  const strokeWidth = "0.1vh";
 
   //createScales
   const catScale = createScales(rootObj)[0];
@@ -10,6 +9,8 @@ const drawChart = (createScales, rootObj) => {
   // draw chart
   const groups = d3
     .select("#chart-container")
+    .append("div")
+    .attr("id", "treemap-container")
     .append("svg")
     .attr("id", "chart")
     .attr("viewBox", viewBox)

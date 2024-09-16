@@ -38,7 +38,7 @@ createFront(
   addTooltip
 );
 
-document.getElementsByClassName("link")[0].click();
+document.getElementsByClassName("links")[0].click();
 
 //logs
 console.log(rootMovies);

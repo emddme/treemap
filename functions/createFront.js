@@ -14,15 +14,15 @@ const createFront = (...props) => {
   d3.select("#app").selectAll("*").remove();
 
   //add headers and navbar
-  d3.select("#app").append("h1").text(welcome);
-  d3.select("#app").append("h2").text(intro);
+  d3.select("#app").append("h1").classed("title", true).text(welcome);
+  d3.select("#app").append("h2").classed("subtitle", true).text(intro);
   d3.select("#app").append("div").attr("id", "navbar");
 
   //populate navbar, define event listeners
   for (let i = 0; i < 3; i++) {
     d3.select("#navbar")
       .append("h3")
-      .classed("link", "true")
+      .classed("links", "true")
       .attr("id", mapIdsAndNames[i][0])
       .text(mapIdsAndNames[i][1])
       .on("mouseover", (e) =>

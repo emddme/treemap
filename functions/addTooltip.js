@@ -1,9 +1,8 @@
 const addTooltip = () => {
   d3.selectAll(".tile")
     .on("mouseover", (e) => {
-      console.log(e.target.__data__.data[0]);
-      const w = 30;
-      const h = 20;
+      const w = 31;
+      const h = 15;
       let x = (e.target.__data__.x0 + e.target.__data__.x1) / 2;
       let y = (e.target.__data__.y0 + e.target.__data__.y1) / 2;
       if (x > 70) {
@@ -35,6 +34,21 @@ const addTooltip = () => {
         .attr("height", h)
         .append("xhtml:div")
         .text(e.target.__data__.data[0])
+        .classed("rect-text", true);
+      tooltip
+        .append("foreignObject")
+        .attr("x", 1)
+        .attr("y", 8)
+        .attr("width", w)
+        .attr("height", h)
+        .append("xhtml:div")
+        .text(
+          new Intl.NumberFormat("us-US", {
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 0,
+          }).format(e.target.__data__.data[1])
+        )
         .classed("rect-text", true);
     })
     .on("mouseout", () => d3.select("#tooltip").remove());

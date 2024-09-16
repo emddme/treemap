@@ -16,4 +16,4 @@ export const size = [100, 100];
 
 //styling
 export const stroke = "black";
-export const padding = 0.7;
+export const padding = 0.5;
