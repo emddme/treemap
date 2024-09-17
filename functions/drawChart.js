@@ -1,5 +1,4 @@
 const drawChart = (createScales, rootObj) => {
-  console.log(rootObj);
   //variables
   const viewBox = "0 0 100 100";
 

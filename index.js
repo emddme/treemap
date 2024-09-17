@@ -6,7 +6,7 @@ import createFront from "./functions/createFront.js";
 import createTreemap from "./functions/createTreemap.js";
 import drawChart from "./functions/drawChart.js";
 import drawLegend from "./functions/drawLegend.js";
-import drawNavbar from "./functions/drawNavbar.js";
+import drawHeader from "./functions/drawHeader.js";
 import { padding, size, URLs } from "./variables.js";
 import addTooltipTreemap from "./functions/addTooltipTreemap.js";
 import addTooltipLegend from "./functions/addTooltipLegend.js";
@@ -29,6 +29,9 @@ rootMovies.dataset = "movies";
 const rootGames = createTreemap(gamesFlat, sumOfFunds, size, padding);
 rootGames.dataset = "games";
 
+//TVLs
+const totals = [rootKickstart.value, rootMovies.value, rootGames.value];
+
 //create frontpage
 createFront(
   rootKickstart,
@@ -36,11 +39,12 @@ createFront(
   rootGames,
   createScales,
   createFront,
-  drawNavbar,
+  drawHeader,
   drawChart,
   drawLegend,
   addTooltipTreemap,
-  addTooltipLegend
+  addTooltipLegend,
+  totals
 );
 
 document.getElementsByClassName("links")[0].click();

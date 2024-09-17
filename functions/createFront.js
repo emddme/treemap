@@ -1,5 +1,5 @@
 const createFront = (...props) => {
-  //variables
+  //frontpage variables
   const welcome = "Welcome!";
   const intro = "top-100 Treemaps:";
   const mapIdsAndNames = [
@@ -7,8 +7,6 @@ const createFront = (...props) => {
     ["films", "Highest grossing films"],
     ["games", "Videogame sales"],
   ];
-  //add descriptions and prop-drill to navbar
-  const descriptions = [];
 
   //clean page
   d3.select("#app").selectAll("*").remove();
@@ -41,8 +39,8 @@ const createFront = (...props) => {
         d3.select("#app").selectAll("*").remove();
         const clicked = e.target.outerText;
         const frontArgs = [...props];
-        //drawNavbar
-        props[5](clicked, props[4], frontArgs);
+        //drawHeader
+        props[5](clicked, props[10], props[4], frontArgs);
         //create chart-container
         d3.select("#app").append("div").attr("id", "chart-container");
         //drawLegend
@@ -51,7 +49,7 @@ const createFront = (...props) => {
         props[6](props[3], props[i]);
         //addTooltipTreemap
         props[8]();
-        //addTooltipLegens
+        //addTooltipLegend
         props[9]();
       });
   }

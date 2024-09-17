@@ -15,6 +15,7 @@ body {
   height: 100%;
   background-color: #b4c3db;
 }
+#title,
 .title,
 .link,
 .links,
@@ -25,8 +26,12 @@ body {
   margin-right: 3%;
   font-size: 3vh;
 }
+.title,
+#title {
+  color: darkblue;
+}
 .link {
-  margin-left: 3%;
+  margin-left: 1%;
   opacity: 65%;
 }
 .subtitle {
@@ -48,6 +53,10 @@ body {
 #navbar {
   display: flex;
   flex-direction: row;
+}
+#description {
+  font-size: 2.2vh;
+  padding-left: 1%;
 }
 #chart-container {
   height: 100%;
