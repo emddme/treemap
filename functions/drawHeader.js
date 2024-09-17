@@ -1,6 +1,4 @@
 const drawHeader = (chartName, totals, createFront, frontArgs) => {
-  console.log(chartName);
-
   const descriptions = [
     `Top-100 highest yield Kickstarter online fundraiser campaigns`,
     `Top-100 highest grossing US film productions`,
