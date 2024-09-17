@@ -26,7 +26,7 @@ body {
   font-size: 3vh;
 }
 .link {
-  margin-left: 5%;
+  margin-left: 3%;
   opacity: 65%;
 }
 .subtitle {
@@ -43,7 +43,7 @@ body {
   flex-direction: column;
 }
 .legend-text {
-  font-size: 0.045vh;
+  font-size: 0.08vh;
 }
 #navbar {
   display: flex;
@@ -77,4 +77,8 @@ body {
 #tooltip-rect {
   stroke: black;
   stroke-width: 0.01vh;
+}
+.ttb-text {
+  padding: 1%;
+  font-size: 0.075vh;
 }

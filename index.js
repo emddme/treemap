@@ -8,7 +8,8 @@ import drawChart from "./functions/drawChart.js";
 import drawLegend from "./functions/drawLegend.js";
 import drawNavbar from "./functions/drawNavbar.js";
 import { padding, size, URLs } from "./variables.js";
-import addTooltip from "./functions/addTooltip.js";
+import addTooltipTreemap from "./functions/addTooltipTreemap.js";
+import addTooltipLegend from "./functions/addTooltipLegend.js";
 
 //get STATIC data
 const kickstart = await getData(URLs.static_kickstart);
@@ -38,7 +39,8 @@ createFront(
   drawNavbar,
   drawChart,
   drawLegend,
-  addTooltip
+  addTooltipTreemap,
+  addTooltipLegend
 );
 
 document.getElementsByClassName("links")[0].click();

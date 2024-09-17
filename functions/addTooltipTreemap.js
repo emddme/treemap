@@ -1,7 +1,6 @@
-const addTooltip = () => {
+const addTooltipTreemap = () => {
   d3.selectAll(".tile")
-    .on("mouseover", (e) => {
-      console.log(e.target.__data__.parent.data[0]);
+    .on("mouseenter", (e) => {
       const w = 31;
       const h = 16;
       let x = (e.target.__data__.x0 + e.target.__data__.x1) / 2;
@@ -50,4 +49,4 @@ const addTooltip = () => {
     })
     .on("mouseout", () => d3.select("#tooltip").remove());
 };
-export default addTooltip;
+export default addTooltipTreemap;

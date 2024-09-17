@@ -49,8 +49,10 @@ const createFront = (...props) => {
         props[7](props[3], props[i]);
         //drawChart
         props[6](props[3], props[i]);
-        //addTooltip
+        //addTooltipTreemap
         props[8]();
+        //addTooltipLegens
+        props[9]();
       });
   }
 };
