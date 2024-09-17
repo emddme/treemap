@@ -7,9 +7,25 @@ import createTreemap from "./functions/createTreemap.js";
 import drawChart from "./functions/drawChart.js";
 import drawLegend from "./functions/drawLegend.js";
 import drawHeader from "./functions/drawHeader.js";
-import { padding, size, URLs } from "./variables.js";
 import addTooltipTreemap from "./functions/addTooltipTreemap.js";
 import addTooltipLegend from "./functions/addTooltipLegend.js";
+
+//treemap dimension/styling variables
+const size = [100, 100];
+const padding = 0.5;
+
+//data locations
+const URLs = {
+  kickstart:
+    "https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/kickstarter-funding-data.json",
+  movies:
+    "https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/movie-data.json",
+  games:
+    "https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/video-game-sales-data.json",
+  static_kickstart: "./static-data/kickstarter-static.json",
+  static_movies: "./static-data/movie-static.json",
+  static_games: "./static-data/videogame-static.json",
+};
 
 //get STATIC data
 const kickstart = await getData(URLs.static_kickstart);

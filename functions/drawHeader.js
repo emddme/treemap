@@ -1,8 +1,8 @@
 const drawHeader = (chartName, totals, createFront, frontArgs) => {
   const descriptions = [
-    `Top-100 highest yield Kickstarter online fundraiser campaigns`,
+    `Top-100 highest-yield US Kickstarter online fundraiser campaigns`,
     `Top-100 highest grossing US film productions`,
-    `Top 100 videogame sales (absolute)`,
+    `Top 100 US videogame sales (absolute)`,
   ];
 
   //format total and specify description
