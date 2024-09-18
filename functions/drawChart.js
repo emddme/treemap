@@ -19,22 +19,27 @@ const drawChart = (createScales, rootObj) => {
     .enter()
     .append("g")
     .attr("transform", (d) => `translate(${d.x0}, ${d.y0})`)
-    .attr("width", (d) => d.x1 - d.x0)
-    .attr("height", (d) => d.y1 - d.y0)
     .attr("class", (d) => {
       if (d.depth === 0) {
         return "trunk";
       } else if (d.depth === 1) {
         return `branch ${d.data[0]}`;
       } else if (d.depth === 2) {
-        return `tile`;
+        return `leaf`;
       } else {
       }
-    })
+    });
+
+  groups
+    .append("rect")
+    .classed("tile", true)
+    .attr("width", (d) => d.x1 - d.x0)
+    .attr("height", (d) => d.y1 - d.y0)
     .attr("data-name", (d) => {
-      if (d.depth === 2) {
-        return `${d.data[0]}`;
+      if (d.depth === 0) {
+        return d.dataset;
       } else {
+        return d.data[0];
       }
     })
     .attr("data-category", (d) => {
@@ -42,14 +47,11 @@ const drawChart = (createScales, rootObj) => {
         return d.data[0];
       } else if (d.depth === 2) {
         return d.parent.data[0];
+      } else {
+        return d.dataset;
       }
     })
-    .attr("data-value", (d) => d.value);
-
-  groups
-    .append("rect")
-    .attr("width", (d) => d.x1 - d.x0)
-    .attr("height", (d) => d.y1 - d.y0)
+    .attr("data-value", (d) => d.value)
     .style("fill", (d, i) => {
       if (d.depth === 1) {
         return catScale(i);
@@ -65,6 +67,7 @@ const drawChart = (createScales, rootObj) => {
 
   groups
     .append("foreignObject")
+    .classed("tile-text", true)
     .attr("width", (d) => d.x1 - d.x0)
     .attr("height", (d) => d.y1 - d.y0)
     .append("xhtml:div")

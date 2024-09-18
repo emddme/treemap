@@ -85,3 +85,6 @@ body {
   padding: 1%;
   font-size: 0.11vh;
 }
+.tile-text {
+  pointer-events: none;
+}
