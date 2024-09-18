@@ -1,17 +1,20 @@
 const addTooltipLegend = () => {
   d3.select("#legend")
-    .selectAll(".legend-group")
+    .selectAll(".legend-field")
     .on("mouseenter", (e) => {
-      const category = e.target.attributes.category.value;
-      const value = e.target.attributes.value.value;
+      const category = e.target.parentElement.attributes.category.value;
+      const value = e.target.parentElement.attributes.value.value;
       const w = 20;
-      const h = 3;
-      const translation = `translate(${0},${40})`;
+      const h = 6;
+      const transX = 0;
+      const transY =
+        e.target.parentElement.attributes.itemsLength.value * 3 + 2;
+      const translation = `translate(${transX},${transY})`;
 
       const tooltip = d3
         .select("#legend")
         .append("g")
-        .attr("id", "tooltip")
+        .attr("id", "legendTooltip")
         .attr("transform", translation)
         .attr("width", w)
         .attr("height", h);
@@ -36,6 +39,6 @@ const addTooltipLegend = () => {
         })
         .classed("ttb-text", true);
     })
-    .on("mouseout", () => d3.select("#tooltip").remove());
+    .on("mouseout", () => d3.select("#legendTooltip").remove());
 };
 export default addTooltipLegend;

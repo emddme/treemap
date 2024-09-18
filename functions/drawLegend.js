@@ -7,11 +7,11 @@ const drawLegend = (createScales, rootObj) => {
   //group offset
   const g_x = 1;
   const g_y = 1;
-  const g_dy = 2;
+  const g_dy = 3;
 
   //field dimensions
   const f_w = 15;
-  const f_h = 1.5;
+  const f_h = 2;
 
   //cube dimensions
   const c_edge = 1.5;
@@ -36,14 +36,15 @@ const drawLegend = (createScales, rootObj) => {
       .attr("id", `legend-group${i}`)
       .attr("transform", `translate(${g_x},${g_y + g_dy * i})`)
       .attr("category", categories[i])
-      .attr("value", values[i]);
+      .attr("value", values[i])
+      .attr("itemsLength", categories.length);
   }
 
   //draw cubes
   for (let i = 0; i < categories.length; i++) {
     d3.select(`#legend-group${i}`)
       .append("rect")
-      .classed("legend-cube", true)
+      .classed("legend-cube legend-item", true)
       .attr("width", c_edge)
       .attr("height", c_edge)
       .style("fill", `${scale(i)}`);

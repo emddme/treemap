@@ -3,13 +3,13 @@ const addTooltipTreemap = () => {
     .on("mouseenter", (e) => {
       const w = 31;
       const h = 16;
-      let x = (e.target.__data__.x0 + e.target.__data__.x1) / 2;
-      let y = (e.target.__data__.y0 + e.target.__data__.y1) / 2;
+      let x = e.target.__data__.x1 - 2;
+      let y = e.target.__data__.y1 - 2;
       if (x > 70) {
-        x = x - w;
+        x = e.target.__data__.x0 + 2 - w;
       }
       if (y > 80) {
-        y = y - h;
+        y = e.target.__data__.y0 + 2 - h;
       }
       const tooltip = d3
         .select("#chart")
