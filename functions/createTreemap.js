@@ -1,4 +1,9 @@
-const createTreemap = (flatSet, reducer, size, padding) => {
+const createTreemap = (flatSet, reducer) => {
+  //dimension/styling variables
+  const size = [960, 470];
+  const padding = 2;
+
+  //treemap
   const group = d3.rollup(
     flatSet,
     reducer,

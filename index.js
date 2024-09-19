@@ -10,10 +10,6 @@ import drawHeader from "./functions/drawHeader.js";
 import addTooltipTreemap from "./functions/addTooltipTreemap.js";
 import addTooltipLegend from "./functions/addTooltipLegend.js";
 
-//treemap dimension/styling variables
-const size = [100, 100];
-const padding = 0.5;
-
 //data locations
 const URLs = {
   kickstart:
@@ -37,12 +33,12 @@ const kickstartFlat = flattenData(kickstart);
 const moviesFlat = flattenData(movies);
 const gamesFlat = flattenData(games);
 
-//create treemaps, add dataset identifier
-const rootKickstart = createTreemap(kickstartFlat, sumOfFunds, size, padding);
+//create treemaps, add identifier
+const rootKickstart = createTreemap(kickstartFlat, sumOfFunds);
 rootKickstart.dataset = "kickstarter";
-const rootMovies = createTreemap(moviesFlat, sumOfFunds, size, padding);
+const rootMovies = createTreemap(moviesFlat, sumOfFunds);
 rootMovies.dataset = "movies";
-const rootGames = createTreemap(gamesFlat, sumOfFunds, size, padding);
+const rootGames = createTreemap(gamesFlat, sumOfFunds);
 rootGames.dataset = "games";
 
 //TVLs

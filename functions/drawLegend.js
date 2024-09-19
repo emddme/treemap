@@ -11,14 +11,14 @@ const drawLegend = (createScales, rootObj) => {
 
   //field dimensions
   const f_w = 15;
-  const f_h = 2;
+  const f_h = 1.5;
 
   //cube dimensions
-  const c_edge = 1.5;
+  const c_edge = 1;
 
   //text offset
   const t_x = 2;
-  const t_y = 1.2;
+  const t_y = 1;
 
   //create svg
   d3.select("#chart-container")

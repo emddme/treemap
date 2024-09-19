@@ -1,25 +1,35 @@
 const addTooltipTreemap = () => {
   d3.selectAll(".tile")
     .on("mouseenter", (e) => {
-      const w = 31;
+      const w = 200;
       let h;
+      let offset;
+      let x;
+      let y;
       if (
         e.target.attributes["data-name"].value ===
         e.target.attributes["data-category"].value
       ) {
-        h = 8;
+        h = 35;
+        offset = 25;
+        x = e.target.__data__.x1 - offset;
+        y = (e.target.__data__.y0 + e.target.__data__.y1) / 2 - h / 2;
+        if (x > 700) {
+          x = e.target.__data__.x0 - w + offset;
+        }
       } else {
-        h = 16;
+        h = 60;
+        offset = 10;
+        x = e.target.__data__.x1 - offset;
+        y = e.target.__data__.y1 - offset;
+        if (x > 700) {
+          x = e.target.__data__.x0 + offset - w;
+        }
+        if (y > 400) {
+          y = e.target.__data__.y0 + offset - h;
+        }
       }
 
-      let x = e.target.__data__.x1 - 2;
-      let y = e.target.__data__.y1 - 2;
-      if (x > 70) {
-        x = e.target.__data__.x0 + 2 - w;
-      }
-      if (y > 80) {
-        y = e.target.__data__.y0 + 2 - h;
-      }
       const tooltip = d3
         .select("#chart")
         .append("g")
@@ -32,7 +42,7 @@ const addTooltipTreemap = () => {
       tooltip
         .append("rect")
         .attr("id", "tooltip-rect")
-        .style("rx", "2%")
+        .style("rx", "2px")
         .attr("width", w)
         .attr("height", h);
 
