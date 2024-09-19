@@ -1,6 +1,6 @@
 const drawChart = (createScales, rootObj) => {
   //variables
-  const viewBox = "0 0 960 470";
+  const viewBox = "0 0 960 580";
 
   //createScales
   const catScale = createScales(rootObj)[0];

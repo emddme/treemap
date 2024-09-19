@@ -22,10 +22,10 @@ const addTooltipTreemap = () => {
         offset = 10;
         x = e.target.__data__.x1 - offset;
         y = e.target.__data__.y1 - offset;
-        if (x > 700) {
+        if (x > 750) {
           x = e.target.__data__.x0 + offset - w;
         }
-        if (y > 400) {
+        if (y > 500) {
           y = e.target.__data__.y0 + offset - h;
         }
       }
