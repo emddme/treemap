@@ -8,7 +8,7 @@ const addTooltipLegend = () => {
       const h = 6;
       const transX = 0;
       const transY =
-        e.target.parentElement.attributes.itemsLength.value * 3 + 2;
+        e.target.parentElement.attributes.itemsLength.value * 4 + 4;
       const translation = `translate(${transX},${transY})`;
 
       const tooltip = d3

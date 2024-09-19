@@ -7,7 +7,7 @@ const drawLegend = (createScales, rootObj) => {
   //group offset
   const g_x = 1;
   const g_y = 1;
-  const g_dy = 3;
+  const g_dy = 4;
 
   //field dimensions
   const f_w = 15;

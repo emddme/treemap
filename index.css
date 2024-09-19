@@ -80,11 +80,10 @@ body {
 }
 #tooltip-rect {
   stroke: black;
-  stroke-width: 1px;
 }
 .ttb-text {
   padding: 1%;
-  font-size: 0.11vh;
+  font-size: 1.9px;
 }
 .tile-text {
   pointer-events: none;
