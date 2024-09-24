@@ -28,6 +28,8 @@ const kickstart = await getData(URLs.static_kickstart);
 const movies = await getData(URLs.static_movies);
 const games = await getData(URLs.static_games);
 
+console.log(JSON.stringify(kickstart));
+
 //flatten data objects
 const kickstartFlat = flattenData(kickstart);
 const moviesFlat = flattenData(movies);
